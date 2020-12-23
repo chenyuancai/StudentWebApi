@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 
 namespace StudentWebApi.Entity
 {
-    public class Student
+    public class Role
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public DateTime Birthday { get; set; }
+        public string Roles { get; set; }
     }
 }

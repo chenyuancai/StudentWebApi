@@ -11,7 +11,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using StudentWebApi.JWT.JwtService;
 using StudentWebApi.JWT.JwtService.JwtServiceImpl;
-using StudentWebApi.MiddleWare.ExceptionMiddleWare;
+using StudentWebApi.MiddleWare.ExceptionMiddleware;
+using StudentWebApi.Service;
+using StudentWebApi.Service.ServiceImpl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,6 +52,8 @@ namespace StudentWebApi
                 });
             #endregion
 
+            services.AddSingleton<ILoginService, LoginServiceImpl>();
+            services.AddSingleton<IStudentService, StudentServiceImpl>();
             services.AddSingleton <IGetTokenService,GetTokenServiceImpl> ();
             services.AddSwaggerGen();
             services.AddControllers();

@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using StudentWebApi.Entity;
+using StudentWebApi.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,26 +15,21 @@ namespace StudentWebApi.Controllers
     [Route("api/v3")]
     public class RoleHandleStudentController : ControllerBase
     {
-        public RoleHandleStudentController()
+        private IConfiguration _configuration;
+        private IStudentService _studentService;
+        public RoleHandleStudentController(IConfiguration configuration, IStudentService studentService)
         {
-
+            this._configuration = configuration;
+            this._studentService = studentService;
         }
 
         [HttpGet]
         [Route("GetAll")]
         [Authorize(Roles = "admin")]
-        public string GetAll()
+        public List<Student> GetAll()
         {
-            string roles = "";
-            foreach (var aa in HttpContext.User.Claims)
-            {
-                Console.WriteLine(aa);
-                if (aa.Type.Contains("role"))
-                {
-                    roles = aa.Value;
-                }
-            }
-            return "hello";
+            List <Student>  studentList = this._studentService.GetAll();
+            return studentList;
         }
     }
 }

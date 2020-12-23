@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace StudentWebApi.MiddleWare.ExceptionMiddleWare
+namespace StudentWebApi.MiddleWare.ExceptionMiddleware
 {
-    public static class UseMyExceptionMiddleWare
+    public static class UseMyExceptionExpand
     {
         /// <summary>
         /// 捕获异常
@@ -14,7 +14,7 @@ namespace StudentWebApi.MiddleWare.ExceptionMiddleWare
         /// <returns>将捕获异常中间件暴露出来</returns>
         public static IApplicationBuilder UseMyException(this IApplicationBuilder builder)
         {
-            return builder.UseMiddleware<MyExceptionMiddleWare>();
+            return builder.UseMiddleware<MyExceptionMiddleware>();
         }
     }
 }

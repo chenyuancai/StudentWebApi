@@ -1,7 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Dapper;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using StudentWebApi.Entity;
+using StudentWebApi.Util.Mysql.Dapper;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -17,10 +22,12 @@ namespace StudentWebApi.Controllers
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
+        private IConfiguration _configuration;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IConfiguration configuration)
         {
-            _logger = logger;
+            this._logger = logger;
+            this._configuration = configuration;
         }
 
         [HttpGet]
@@ -52,6 +59,13 @@ namespace StudentWebApi.Controllers
             //    throw new Exception(e.Message);
             //}
             return msg;
+        }
+        [HttpGet]
+        [Route("getcon")]
+        public object getCon()
+        {
+            
+            return "";
         }
     }
 }

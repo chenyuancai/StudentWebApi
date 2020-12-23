@@ -5,14 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace StudentWebApi.MiddleWare.ExceptionMiddleWare
+namespace StudentWebApi.MiddleWare.ExceptionMiddleware
 {
-    public class MyExceptionMiddleWare
+    public class MyExceptionMiddleware
     {
         public RequestDelegate _next;
-        public ILogger<MyExceptionMiddleWare> _logger;
+        public ILogger<MyExceptionMiddleware> _logger;
 
-        public MyExceptionMiddleWare(RequestDelegate requestDelegate, ILogger<MyExceptionMiddleWare> logger)
+        public MyExceptionMiddleware(RequestDelegate requestDelegate, ILogger<MyExceptionMiddleware> logger)
         {
             this._next = requestDelegate;
             this._logger = logger;
