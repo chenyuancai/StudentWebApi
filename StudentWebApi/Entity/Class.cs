@@ -6,23 +6,21 @@ using System.Threading.Tasks;
 namespace StudentWebApi.Entity
 {
     /// <summary>
-    /// 学生实体类
+    /// 班级实体类
     /// </summary>
-    public class Student
+    public class Class
     {
+        /// <summary>
+        /// 班级id
+        /// </summary>
+        public int Id { set; get; }
+        /// <summary>
+        /// 老师id
+        /// </summary>
+        public int TeacherId { get; set; }
         /// <summary>
         /// 学生id
         /// </summary>
-        public int Id { get; set; }
-
-        /// <summary>
-        /// 学生姓名
-        /// </summary>
-        public string Name { get; set; }
-
-        /// <summary>
-        /// 学生生日
-        /// </summary>
-        public DateTime Birthday { get; set; }
+        public int StudentId { get; set; }
     }
 }

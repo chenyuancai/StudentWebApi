@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace StudentWebApi.Models
+namespace StudentWebApi.Entity
 {
     /// <summary>
-    /// 登录属性
+    /// 角色实体类
     /// </summary>
-    public class LoginModel
+    public class Role
     {
         /// <summary>
-        /// 登录名
+        /// 角色id
         /// </summary>
-        public string UserName { get; set; }
+        public int Id { get; set; }
         /// <summary>
-        /// 登录密码
+        /// 角色
         /// </summary>
-        public string Password { get; set; }
+        public string Roles { get; set; }
     }
 }

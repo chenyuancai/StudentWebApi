@@ -6,23 +6,21 @@ using System.Threading.Tasks;
 namespace StudentWebApi.Entity
 {
     /// <summary>
-    /// 学生实体类
+    /// 权限点实体类
     /// </summary>
-    public class Student
+    public class RoleAuthority
     {
         /// <summary>
-        /// 学生id
+        /// 权限点id
         /// </summary>
         public int Id { get; set; }
-
         /// <summary>
-        /// 学生姓名
+        /// 权限id
         /// </summary>
-        public string Name { get; set; }
-
+        public int RoleId { get; set; }
         /// <summary>
-        /// 学生生日
+        /// 权限id所拥有的权限点
         /// </summary>
-        public DateTime Birthday { get; set; }
+        public int RoleLevel { get; set; }
     }
 }
