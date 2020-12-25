@@ -34,6 +34,47 @@ namespace StudentWebApi.Dao
             return userList;
         }
         /// <summary>
+        /// 根据userName获取实体对象
+        /// configuration:配置文件类
+        /// fileds：列
+        /// orderstr：排序
+        /// PageSize：当前页显示条数
+        /// PageIndex：当前页
+        /// strWhere：条件
+        /// </summary>
+        public List<Student> GetStudentListArray(IConfiguration configuration, string fileds, string orderstr, int PageSize, int PageIndex, string strWhere)
+        {
+            IDbConnection conn = dapper.MySqlConnection(configuration);
+
+            string cond = string.IsNullOrEmpty(strWhere) ? "" : string.Format(" where {0}", strWhere);
+
+            string sql = string.Format("select {0} from `Student` {1} order by {2} limit {3},{4}", fileds, cond, orderstr, (PageIndex - 1) * PageSize, PageSize);
+
+            List<Student> students = conn.Query<Student>(sql).ToList;
+
+        }
+
+        /// <summary>计算记录数
+        /// 
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        public int CalcCount(IConfiguration configuration, string where)
+        {
+            IDbConnection conn = dapper.MySqlConnection(configuration);
+            string sql = "select count(1) from `Student`";
+            if (!string.IsNullOrEmpty(where))
+            {
+                sql += " where " + where;
+            }
+                int i = conn.QuerySingle<int>(sql);
+                return i;
+
+            
+        }
+
+
+        /// <summary>
         /// 根据用户名查找学生信息
         /// </summary>
         /// <param name="configuration">传入配置</param>
@@ -43,7 +84,7 @@ namespace StudentWebApi.Dao
         {
             IDbConnection conn = dapper.MySqlConnection(configuration);
             string sql = @"select `Id`,`Name`,`Birthday` from Student where `UserName` = @UserName";
-            Student student = (Student)conn.Query<Student>(sql, new { UserName = name });
+            Student student = (Student)conn.Query<Student>(sql, new { UserName = name }).FirstOrDefault();
             conn.Close();
             return student;
         }
@@ -106,14 +147,14 @@ namespace StudentWebApi.Dao
         /// </summary>
         /// <param name="configuration">传入配置</param>
         /// <param name="id">学生id</param>
-        /// <returns>返回相关信息</returns>
-        public List<Student> SelectStudentById(IConfiguration configuration, int id)
+        /// <returns>返回学生对象</returns>
+        public Student SelectStudentById(IConfiguration configuration, int id)
         {
             DynamicParameters Parameters = new DynamicParameters();
             IDbConnection conn = dapper.MySqlConnection(configuration);
             string sql = @"select `Id`,`Name`,`Birthday` from `Student` where `ID` = @Id";
             Parameters.Add("Id", id);
-            List<Student> student = (List<Student>)conn.Query<Student>(sql, Parameters);
+            Student student = (Student)conn.Query<Student>(sql, Parameters).FirstOrDefault();
             conn.Close();
             return student;
         }

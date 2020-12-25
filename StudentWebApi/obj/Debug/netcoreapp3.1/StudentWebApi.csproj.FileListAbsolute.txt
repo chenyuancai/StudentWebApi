@@ -106,3 +106,10 @@ E:\Desktop\Student\StudentWebApi\StudentWebApi\obj\Debug\netcoreapp3.1\StudentWe
 E:\Desktop\Student\StudentWebApi\StudentWebApi\obj\Debug\netcoreapp3.1\StudentWebApi.dll
 E:\Desktop\Student\StudentWebApi\StudentWebApi\obj\Debug\netcoreapp3.1\StudentWebApi.pdb
 E:\Desktop\Student\StudentWebApi\StudentWebApi\obj\Debug\netcoreapp3.1\StudentWebApi.genruntimeconfig.cache
+E:\cycworkspace\StudentWebApi\StudentWebApi\bin\Debug\netcoreapp3.1\StudentWebApi.xml
+E:\cycworkspace\StudentWebApi\StudentWebApi\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+E:\cycworkspace\StudentWebApi\StudentWebApi\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+E:\cycworkspace\StudentWebApi\StudentWebApi\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+E:\cycworkspace\StudentWebApi\StudentWebApi\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+E:\cycworkspace\StudentWebApi\StudentWebApi\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\cycworkspace\StudentWebApi\StudentWebApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

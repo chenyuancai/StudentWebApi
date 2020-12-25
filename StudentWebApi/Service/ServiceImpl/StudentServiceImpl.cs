@@ -56,8 +56,8 @@ namespace StudentWebApi.Service.ServiceImpl
                 flag = false;
                 msg = "请输入学生相关信息";
             }
-            dic.Add("flag",flag);
-            dic.Add("msg",msg);
+            dic.Add("flag", flag);
+            dic.Add("msg", msg);
             return dic;
         }
         /// <summary>
@@ -72,25 +72,17 @@ namespace StudentWebApi.Service.ServiceImpl
             string msg = "";
             if (id != 0)
             {
-                List<Student> student = studentDao.SelectStudentById(this._configuration, id);
-                if(student.Count != 0)
+                Student student = studentDao.SelectStudentById(this._configuration, id);
+                if (!"".Equals(student.Name))
                 {
-                    if (!"".Equals(student[0].Name))
+                    flag = studentDao.DeleteStudentById(this._configuration, id);
+                    if (flag)
                     {
-                        flag = studentDao.DeleteStudentById(this._configuration, id);
-                        if (flag)
-                        {
-                            msg = "删除成功";
-                        }
-                        else
-                        {
-                            msg = "删除失败";
-                        }
+                        msg = "删除成功";
                     }
                     else
                     {
-                        msg = "查无此人";
-                        flag = false;
+                        msg = "删除失败";
                     }
                 }
                 else
@@ -98,7 +90,6 @@ namespace StudentWebApi.Service.ServiceImpl
                     msg = "查无此人";
                     flag = false;
                 }
-                
             }
             else
             {
@@ -117,25 +108,19 @@ namespace StudentWebApi.Service.ServiceImpl
             string msg = "";
             if (!"".Equals(student.Name))
             {
-                List<Student> students = studentDao.SelectStudentById(this._configuration, student.Id);
-                if (students.Count != 0)
+                Student students = studentDao.SelectStudentById(this._configuration, student.Id);
+
+                flag = studentDao.UpdateStudent(this._configuration, student);
+                if (flag)
                 {
-                    flag = studentDao.UpdateStudent(this._configuration, student);
-                    if (flag)
-                    {
-                        msg = "更新成功";
-                    }
-                    else
-                    {
-                        flag = false;
-                        msg = "更新失败";
-                    }
+                    msg = "更新成功";
                 }
                 else
                 {
                     flag = false;
-                    msg = "查无此人";
+                    msg = "更新失败";
                 }
+
             }
             else
             {
