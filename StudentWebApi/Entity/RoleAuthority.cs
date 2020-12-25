@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 
 namespace StudentWebApi.Entity
 {
-<<<<<<< HEAD
     /// <summary>
     /// 权限点实体类
     /// </summary>
@@ -22,12 +21,6 @@ namespace StudentWebApi.Entity
         /// <summary>
         /// 权限id所拥有的权限点
         /// </summary>
-=======
-    public class RoleAuthority
-    {
-        public int Id { get; set; }
-        public int RoleId { get; set; }
->>>>>>> 7a42374069fa5623529170d705a428704a0f046e
         public int RoleLevel { get; set; }
     }
 }
