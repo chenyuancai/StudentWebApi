@@ -42,11 +42,16 @@ namespace StudentWebApi.Dao
         public Student GetStudentbyName(IConfiguration configuration, string name)
         {
             IDbConnection conn = dapper.MySqlConnection(configuration);
+<<<<<<< HEAD
             string sql = @"select `Id`,`Name`,`Birthday` from Student where `UserName` = @UserName";
+=======
+            string sql = @"select `Id`,`Name`,`Birthday` from Student where `UserName` =@UserName";
+>>>>>>> 7a42374069fa5623529170d705a428704a0f046e
             Student student = (Student)conn.Query<Student>(sql, new { UserName = name });
             conn.Close();
             return student;
         }
+<<<<<<< HEAD
         /// <summary>
         /// 插入学生信息
         /// </summary>
@@ -144,5 +149,7 @@ namespace StudentWebApi.Dao
             }
             return flag;
         }
+=======
+>>>>>>> 7a42374069fa5623529170d705a428704a0f046e
     }
 }

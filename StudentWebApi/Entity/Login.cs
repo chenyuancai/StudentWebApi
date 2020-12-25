@@ -5,9 +5,12 @@ using System.Threading.Tasks;
 
 namespace StudentWebApi.Entity
 {
+<<<<<<< HEAD
     /// <summary>
     /// 登录实体类
     /// </summary>
+=======
+>>>>>>> 7a42374069fa5623529170d705a428704a0f046e
     public class Login
     {
         /// <summary>

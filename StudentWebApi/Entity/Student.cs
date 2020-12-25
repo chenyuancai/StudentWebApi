@@ -14,10 +14,13 @@ namespace StudentWebApi.Entity
         /// 学生id
         /// </summary>
         public int Id { get; set; }
+<<<<<<< HEAD
 
         /// <summary>
         /// 学生姓名
         /// </summary>
+=======
+>>>>>>> 7a42374069fa5623529170d705a428704a0f046e
         public string Name { get; set; }
 
         /// <summary>

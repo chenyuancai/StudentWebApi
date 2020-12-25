@@ -16,7 +16,10 @@ namespace StudentWebApi.Controllers
     [Authorize]
     public class RoleHandleStudentController : ControllerBase
     {
+<<<<<<< HEAD
         
+=======
+>>>>>>> 7a42374069fa5623529170d705a428704a0f046e
         private IConfiguration _configuration;
         private IStudentService _studentService;
         public RoleHandleStudentController(IConfiguration configuration, IStudentService studentService)
@@ -31,6 +34,7 @@ namespace StudentWebApi.Controllers
         /// <returns>返回一个学生集合</returns>
         [HttpGet]
         [Route("GetAll")]
+<<<<<<< HEAD
         [Authorize(Roles = "Teacher")]
         public List<Student> GetAll()
         {
@@ -126,6 +130,13 @@ namespace StudentWebApi.Controllers
             }
 
             return dic;
+=======
+        [Authorize(Roles = "admin")]
+        public List<Student> GetAll()
+        {
+            List <Student>  studentList = this._studentService.GetAll();
+            return studentList;
+>>>>>>> 7a42374069fa5623529170d705a428704a0f046e
         }
     }
 }

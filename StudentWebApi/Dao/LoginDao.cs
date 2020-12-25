@@ -26,11 +26,19 @@ namespace StudentWebApi.Dao
         /// <param name="configuration">传入配置</param>
         /// <param name="name">传入姓名</param>
         /// <returns></returns>
+<<<<<<< HEAD
         public List<Teacher> GetTeacherbyName(IConfiguration configuration, string name)
         {
             IDbConnection conn = dapper.MySqlConnection(configuration);
             string sql = @"select `Id`,`RoleId`,`Name`,`LoginName`,`Password` from `Teacher` where `LoginName` =@LoginName";
             List<Teacher> teacher = (List<Teacher>)conn.Query<Teacher>(sql, new { LoginName = name });
+=======
+        public Teacher GetTeacherbyName(IConfiguration configuration, string name)
+        {
+            IDbConnection conn = dapper.MySqlConnection(configuration);
+            string sql = @"select `Id`,`RoleId`,`Name`,`LoginName`,`Password` from `Teacher` where `LoginName` =@LoginName";
+            Teacher teacher = (Teacher)conn.Query<Teacher>(sql, new { LoginName = name });
+>>>>>>> 7a42374069fa5623529170d705a428704a0f046e
             conn.Close();
             return teacher;
         }

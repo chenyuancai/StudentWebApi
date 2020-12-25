@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace StudentWebApi.Entity
 {
+<<<<<<< HEAD
     /// <summary>
     /// 老师实体类
     /// </summary>
@@ -29,6 +30,14 @@ namespace StudentWebApi.Entity
         /// <summary>
         /// 老师登录密码
         /// </summary>
+=======
+    public class Teacher
+    {
+        public int Id { get; set; }
+        public int RoleId { get; set; }
+        public string Name { get; set; }
+        public string LoginName { get; set; }
+>>>>>>> 7a42374069fa5623529170d705a428704a0f046e
         public string Password { get; set; }
     }
 }

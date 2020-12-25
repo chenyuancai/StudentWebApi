@@ -22,11 +22,16 @@ namespace StudentWebApi.Service.ServiceImpl
         /// <summary>
         /// 获取所有的学生对象
         /// </summary>
+<<<<<<< HEAD
+=======
+        /// <param name="configuration">传入配置</param>
+>>>>>>> 7a42374069fa5623529170d705a428704a0f046e
         /// <returns>返回所有学生集合</returns>
         public List<Student> GetAll()
         {
             List<Student> userList = studentDao.GetAll(this._configuration);
             return userList;
+<<<<<<< HEAD
         }
 
         /// <summary>
@@ -146,6 +151,8 @@ namespace StudentWebApi.Service.ServiceImpl
             dic.Add("msg", msg);
 
             return dic;
+=======
+>>>>>>> 7a42374069fa5623529170d705a428704a0f046e
         }
     }
 }
