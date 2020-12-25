@@ -6426,11 +6426,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Desktop\\Student\\StudentWebApi\\StudentWebApi\\StudentWebApi.csproj",
+      "projectUniqueName": "E:\\cycworkspace\\StudentWebApi\\StudentWebApi\\StudentWebApi.csproj",
       "projectName": "StudentWebApi",
-      "projectPath": "E:\\Desktop\\Student\\StudentWebApi\\StudentWebApi\\StudentWebApi.csproj",
+      "projectPath": "E:\\cycworkspace\\StudentWebApi\\StudentWebApi\\StudentWebApi.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "E:\\Desktop\\Student\\StudentWebApi\\StudentWebApi\\obj\\",
+      "outputPath": "E:\\cycworkspace\\StudentWebApi\\StudentWebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6441,6 +6441,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "http://nuget.xiaobao100.cn/nuget/xiaobao": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -6522,7 +6523,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
