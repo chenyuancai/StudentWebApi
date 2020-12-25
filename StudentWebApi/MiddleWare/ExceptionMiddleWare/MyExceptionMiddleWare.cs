@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace StudentWebApi.MiddleWare.ExceptionMiddleware
+namespace StudentWebApi.Middleware.ExceptionMiddleware
 {
     public class MyExceptionMiddleware
     {

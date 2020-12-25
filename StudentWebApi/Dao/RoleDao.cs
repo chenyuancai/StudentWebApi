@@ -19,11 +19,19 @@ namespace StudentWebApi.Dao
         /// 链接mysql数据库
         /// </summary>
         private DapperHelper dapper = new DapperHelper();
+<<<<<<< HEAD
+        public List<Role> GetRole(IConfiguration configuration, int id)
+        {
+            IDbConnection conn = dapper.MySqlConnection(configuration);
+            string sql = @"select `Id`,`Roles` from `Role` where `Id` =@Id";
+            List<Role> role = (List<Role>)conn.Query<Role>(sql, new { Id = id });
+=======
         public Role GetRole(IConfiguration configuration, int id)
         {
             IDbConnection conn = dapper.MySqlConnection(configuration);
             string sql = @"select `Id`,`Roles` from `Role` where `Id` =@Id";
             Role role = (Role)conn.Query<Role>(sql, new { Id = id });
+>>>>>>> 7a42374069fa5623529170d705a428704a0f046e
             conn.Close();
             return role;
         }

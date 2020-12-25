@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "F/otVH6hwdDFTIfnyuYX6msUgHtqs1juAx1LFwdC3SO35emIw8UPxOJ6fStzlX7gcFdhSsgq4eSW2v+7UB5lwg==",
+  "dgSpecHash": "q/6PmL8BrC7jZXmzOFYdU58toR5kqPLfiftlYxoDKNQ6mnDNnr1hXFY5yFkd1vHpZZ4ZLBEY/rRjdH6UJjvUsg==",
   "success": true,
-  "projectFilePath": "E:\\Desktop\\Student\\StudentWebApi\\StudentWebApi\\StudentWebApi.csproj",
+  "projectFilePath": "E:\\cycworkspace\\StudentWebApi\\StudentWebApi\\StudentWebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",

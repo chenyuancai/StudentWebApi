@@ -22,6 +22,11 @@ namespace StudentWebApi.Controllers
             this._loginService = loginService;
         }
 
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="loginModel">一个传入登录对象：UserName：登录名，Password：密码</param>
+        /// <returns>返回一个状态以及token：msg：登录是否成功，token：token</returns>
         [HttpPost]
         [Route("Login")]
         public Dictionary<string,Object> Login(LoginModel loginModel)

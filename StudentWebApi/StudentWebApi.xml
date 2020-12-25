@@ -1,0 +1,353 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StudentWebApi</name>
+    </assembly>
+    <members>
+        <member name="M:StudentWebApi.Controllers.LoginController.Login(StudentWebApi.Models.LoginModel)">
+            <summary>
+            登录
+            </summary>
+            <param name="loginModel">一个传入登录对象：UserName：登录名，Password：密码</param>
+            <returns>返回一个状态以及token：msg：登录是否成功，token：token</returns>
+        </member>
+        <member name="M:StudentWebApi.Controllers.RoleHandleStudentController.GetAll">
+            <summary>
+            教师获取所有学生的信息
+            需要老师或教导主任的权限
+            </summary>
+            <returns>返回一个学生集合</returns>
+        </member>
+        <member name="M:StudentWebApi.Controllers.RoleHandleStudentController.InsertStudent(StudentWebApi.Entity.Student)">
+            <summary>
+            添加学生
+            </summary>
+            <param name="student">传入学生信息</param>
+            <returns>返回相关信息</returns>
+        </member>
+        <member name="M:StudentWebApi.Controllers.RoleHandleStudentController.DeleteById(System.Int32)">
+            <summary>
+            删除学生
+            </summary>
+            <param name="id">学生id</param>
+            <returns>返回相关信息</returns>
+        </member>
+        <member name="M:StudentWebApi.Controllers.RoleHandleStudentController.UpdateStudent(StudentWebApi.Entity.Student)">
+            <summary>
+            更新学生信息
+            </summary>
+            <param name="student">传入学生对象</param>
+            <returns>返回先关信息</returns>
+        </member>
+        <member name="T:StudentWebApi.Dao.LoginDao">
+            <summary>
+            登录操作
+            </summary>
+        </member>
+        <member name="F:StudentWebApi.Dao.LoginDao.dapper">
+            <summary>
+            链接mysql数据库
+            </summary>
+        </member>
+        <member name="M:StudentWebApi.Dao.LoginDao.GetTeacherbyName(Microsoft.Extensions.Configuration.IConfiguration,System.String)">
+            <summary>
+            根据用户名查找学生信息
+            </summary>
+            <param name="configuration">传入配置</param>
+            <param name="name">传入姓名</param>
+            <returns></returns>
+        </member>
+        <member name="T:StudentWebApi.Dao.RoleDao">
+            <summary>
+            权限操作
+            </summary>
+        </member>
+        <member name="F:StudentWebApi.Dao.RoleDao.dapper">
+            <summary>
+            链接mysql数据库
+            </summary>
+        </member>
+        <member name="T:StudentWebApi.Dao.StudentDao">
+            <summary>
+            学生操作
+            </summary>
+        </member>
+        <member name="F:StudentWebApi.Dao.StudentDao.dapper">
+            <summary>
+            链接mysql数据库
+            </summary>
+        </member>
+        <member name="M:StudentWebApi.Dao.StudentDao.GetAll(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            获取所有的学生信息
+            </summary>
+            <param name="configuration">传入配置</param>
+            <returns>返回一个学生集合</returns>
+        </member>
+        <member name="M:StudentWebApi.Dao.StudentDao.GetStudentbyName(Microsoft.Extensions.Configuration.IConfiguration,System.String)">
+            <summary>
+            根据用户名查找学生信息
+            </summary>
+            <param name="configuration">传入配置</param>
+            <param name="name">传入姓名</param>
+            <returns></returns>
+        </member>
+        <member name="M:StudentWebApi.Dao.StudentDao.InsertStudent(Microsoft.Extensions.Configuration.IConfiguration,StudentWebApi.Entity.Student)">
+            <summary>
+            插入学生信息
+            </summary>
+            <param name="configuration">传入配置</param>
+            <param name="student">传入学生对象</param>
+            <returns>返回是否成功</returns>
+        </member>
+        <member name="M:StudentWebApi.Dao.StudentDao.DeleteStudentById(Microsoft.Extensions.Configuration.IConfiguration,System.Int32)">
+            <summary>
+            根据id删除相应学生信息
+            </summary>
+            <param name="configuration">传入配置</param>
+            <param name="id">学生id</param>
+            <returns>返回是否成功</returns>
+        </member>
+        <member name="M:StudentWebApi.Dao.StudentDao.SelectStudentById(Microsoft.Extensions.Configuration.IConfiguration,System.Int32)">
+            <summary>
+            根据id查询学生信息
+            </summary>
+            <param name="configuration">传入配置</param>
+            <param name="id">学生id</param>
+            <returns>返回相关信息</returns>
+        </member>
+        <member name="M:StudentWebApi.Dao.StudentDao.UpdateStudent(Microsoft.Extensions.Configuration.IConfiguration,StudentWebApi.Entity.Student)">
+            <summary>
+            更新学生
+            </summary>
+            <param name="configuration">传入配置</param>
+            <param name="student">传入学生对象</param>
+            <returns>返回是否更新成功</returns>
+        </member>
+        <member name="T:StudentWebApi.Entity.Class">
+            <summary>
+            班级实体类
+            </summary>
+        </member>
+        <member name="P:StudentWebApi.Entity.Class.Id">
+            <summary>
+            班级id
+            </summary>
+        </member>
+        <member name="P:StudentWebApi.Entity.Class.TeacherId">
+            <summary>
+            老师id
+            </summary>
+        </member>
+        <member name="P:StudentWebApi.Entity.Class.StudentId">
+            <summary>
+            学生id
+            </summary>
+        </member>
+        <member name="T:StudentWebApi.Entity.Login">
+            <summary>
+            登录实体类
+            </summary>
+        </member>
+        <member name="P:StudentWebApi.Entity.Login.UserName">
+            <summary>
+            用户登录名
+            </summary>
+        </member>
+        <member name="P:StudentWebApi.Entity.Login.Password">
+            <summary>
+            用户密码
+            </summary>
+        </member>
+        <member name="T:StudentWebApi.Entity.Role">
+            <summary>
+            角色实体类
+            </summary>
+        </member>
+        <member name="P:StudentWebApi.Entity.Role.Id">
+            <summary>
+            角色id
+            </summary>
+        </member>
+        <member name="P:StudentWebApi.Entity.Role.Roles">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="T:StudentWebApi.Entity.RoleAuthority">
+            <summary>
+            权限点实体类
+            </summary>
+        </member>
+        <member name="P:StudentWebApi.Entity.RoleAuthority.Id">
+            <summary>
+            权限点id
+            </summary>
+        </member>
+        <member name="P:StudentWebApi.Entity.RoleAuthority.RoleId">
+            <summary>
+            权限id
+            </summary>
+        </member>
+        <member name="P:StudentWebApi.Entity.RoleAuthority.RoleLevel">
+            <summary>
+            权限id所拥有的权限点
+            </summary>
+        </member>
+        <member name="T:StudentWebApi.Entity.Student">
+            <summary>
+            学生实体类
+            </summary>
+        </member>
+        <member name="P:StudentWebApi.Entity.Student.Id">
+            <summary>
+            学生id
+            </summary>
+        </member>
+        <member name="P:StudentWebApi.Entity.Student.Name">
+            <summary>
+            学生姓名
+            </summary>
+        </member>
+        <member name="P:StudentWebApi.Entity.Student.Birthday">
+            <summary>
+            学生生日
+            </summary>
+        </member>
+        <member name="T:StudentWebApi.Entity.Teacher">
+            <summary>
+            老师实体类
+            </summary>
+        </member>
+        <member name="P:StudentWebApi.Entity.Teacher.Id">
+            <summary>
+            老师id
+            </summary>
+        </member>
+        <member name="P:StudentWebApi.Entity.Teacher.RoleId">
+            <summary>
+            老师角色id
+            </summary>
+        </member>
+        <member name="P:StudentWebApi.Entity.Teacher.Name">
+            <summary>
+            老师姓名
+            </summary>
+        </member>
+        <member name="P:StudentWebApi.Entity.Teacher.LoginName">
+            <summary>
+            老师登录名
+            </summary>
+        </member>
+        <member name="P:StudentWebApi.Entity.Teacher.Password">
+            <summary>
+            老师登录密码
+            </summary>
+        </member>
+        <member name="M:StudentWebApi.MiddleWare.ExceptionMiddleware.UseMyExceptionExpand.UseMyException(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            捕获异常
+            </summary>
+            <returns>将捕获异常中间件暴露出来</returns>
+        </member>
+        <member name="T:StudentWebApi.Models.LoginModel">
+            <summary>
+            登录属性
+            </summary>
+        </member>
+        <member name="P:StudentWebApi.Models.LoginModel.UserName">
+            <summary>
+            登录名
+            </summary>
+        </member>
+        <member name="P:StudentWebApi.Models.LoginModel.Password">
+            <summary>
+            登录密码
+            </summary>
+        </member>
+        <member name="M:StudentWebApi.Service.ILoginService.Login(StudentWebApi.Entity.Login)">
+            <summary>
+            判断是否登录成功
+            </summary>
+            <param name="login">传入登录对象</param>
+            <returns>登录成功返回true，登陆失败返回false</returns>
+        </member>
+        <member name="M:StudentWebApi.Service.ILoginService.GetToken(StudentWebApi.Entity.Login)">
+            <summary>
+            获取token
+            </summary>
+            <param name="login">传入登录对象</param>
+            <returns>传回token</returns>
+        </member>
+        <member name="M:StudentWebApi.Service.IStudentService.GetAll">
+            <summary>
+            获取所有的学生对象
+            </summary>
+            <returns>返回所有学生集合</returns>
+        </member>
+        <member name="M:StudentWebApi.Service.IStudentService.InsertStudent(StudentWebApi.Entity.Student)">
+            <summary>
+            插入学生
+            </summary>
+            <param name="student">传入学生</param>
+            <returns>返回是否成功</returns>
+        </member>
+        <member name="M:StudentWebApi.Service.IStudentService.DeleteStudentById(System.Int32)">
+            <summary>
+            根据id删除相应学生信息
+            </summary>
+            <param name="id">学生id</param>
+            <returns>返回是否成功</returns>
+        </member>
+        <member name="M:StudentWebApi.Service.IStudentService.UpdateStudent(StudentWebApi.Entity.Student)">
+            <summary>
+            更新学生信息
+            </summary>
+            <param name="student">传入学生对象</param>
+            <returns>返回相关信息</returns>
+        </member>
+        <member name="M:StudentWebApi.Service.ServiceImpl.LoginServiceImpl.Login(StudentWebApi.Entity.Login)">
+            <summary>
+            判断是否登录成功
+            </summary>
+            <param name="login">传入登录对象</param>
+            <returns>登录成功返回true，登陆失败返回false</returns>
+        </member>
+        <member name="M:StudentWebApi.Service.ServiceImpl.LoginServiceImpl.GetToken(StudentWebApi.Entity.Login)">
+            <summary>
+            获取token
+            </summary>
+            <param name="login">传入登录对象</param>
+            <returns>传回token</returns>
+        </member>
+        <member name="M:StudentWebApi.Service.ServiceImpl.StudentServiceImpl.GetAll">
+            <summary>
+            获取所有的学生对象
+            </summary>
+            <returns>返回所有学生集合</returns>
+        </member>
+        <member name="M:StudentWebApi.Service.ServiceImpl.StudentServiceImpl.InsertStudent(StudentWebApi.Entity.Student)">
+            <summary>
+            插入学生
+            </summary>
+            <param name="student">传入学生</param>
+            <returns>返回是否成功</returns>
+        </member>
+        <member name="M:StudentWebApi.Service.ServiceImpl.StudentServiceImpl.DeleteStudentById(System.Int32)">
+            <summary>
+            根据id删除相应学生信息
+            </summary>
+            <param name="id">学生id</param>
+            <returns>返回相关信息</returns>
+        </member>
+        <member name="T:StudentWebApi.Util.Enum.EnumRoleAuthority">
+            <summary>
+            SelectAll查看全部信息权限
+            SelectOne查看详细信息权限
+            Insert插入权限
+            Delete删除权限
+            Update更新权限
+            </summary>
+        </member>
+    </members>
+</doc>
